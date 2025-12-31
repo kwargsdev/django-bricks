@@ -1,0 +1,9 @@
+{% load i18n %}
+{% load static %}
+
+<footer class="footer container pt-5 mt-5">
+	<p class="small text-center text-sm-start mb-4 d-flex justify-content-between opacity-50">
+		<span>{% now "Y" %} &#169; <a class="text-decoration-none fw-bold" href="/">{{ request.site.name }}</a></span>
+		<span>Fabriqué par <a class="text-decoration-none fw-bold" target="_blank" href="https://kwargs.be">{kw:args}</a></span>
+	</p>
+</footer>

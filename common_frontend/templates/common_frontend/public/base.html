@@ -1,0 +1,42 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="{{request.LANGUAGE_CODE}}" 
+      dir="{% if request.LANGUAGE_CODE in 'ar he fa ur' %}rtl{% else %}ltr{% endif %}"
+      data-bs-theme="light">
+  <head>
+    {% include 'common_frontend/public/meta.html' %}
+    <title>{% block page_titre %}{% endblock %}</title>
+    {% include 'common_frontend/public/style.html' %}
+    {% block favicon %}{% endblock %}
+    {% block css_supp %}{% endblock %}
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="d-flex align-items-center">
+      {% block navbar_brand %}{% endblock %}
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {% block navbar_contenu %}{% endblock %}
+        <!-- Toggle theme button -->
+        <button id="theme-toggle" class="btn rounded-circle">
+        <i class="bi bi-moon-stars"></i>
+        </button>
+      </div>
+      
+    </div>
+  </nav>
+    {% block page_contenu %}{% endblock %}
+    {% include 'common_frontend/public/messages.html' %}
+    {% include 'common_frontend/public/scrolltop.html' %}
+    {% include 'common_frontend/public/footer.html' %}
+    {% include 'common_frontend/public/js.html' %}
+    {% block js_supp %}{% endblock %}
+  </body>
+</html>

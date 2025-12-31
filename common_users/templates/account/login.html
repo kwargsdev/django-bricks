@@ -1,0 +1,29 @@
+{% extends "account/base_entrance.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<div class="container min-vh-100 section">
+    <div class="row section">
+        <div class="col-lg-4 col-md-6 mx-auto">
+            <div class="card bg-body">
+                <div class="card-body">
+                    <h2 class="mb-4 text-center">{% trans "Sign In" %}</h2>
+                    <!-- CLASSIC LOGIN -->
+                    <form method="post" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="d-grid d-md-block text-center mt-3 gap-2">
+                          <button type="submit" class="btn btn-primary">{% trans "Sign In" %}</button>
+                          <a href="{% url 'account_signup' %}" role="button" type="submit" class="btn btn-secondary">{% trans "Sign Up" %}</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+/* COULEURS */
+@import "colors.css";
+.card {
+	box-shadow: var(--bs-box-shadow-lg) !important;
+  border-radius: 0;
+}
+/* SECTION */
+.section {
+  padding-top: 3rem;
+}
+/* SCROLL TO TOP */
+#btn-back-to-top {
+    position: fixed;
+    z-index: 1000;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    --bs-btn-border-color: none;
+    background-color: var(--rouge);
+    color:var(--blanc);
+}
+/* POSITIONNEMENT DES MESSAGES */
+.message-container {
+    position: fixed;
+    margin: 0 10px 10px 0;
+    bottom: 0;
+    left:0;
+    z-index: 1050;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column-reverse; /* Empile de bas en haut */
+}
+.message-alert {
+  padding-left: 10px;
+  margin-bottom: 5px; /* Ajoute de l'espace entre les messages */
+}
+.alert {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}

@@ -1,0 +1,19 @@
+{% load static %}
+<!-- bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- JQuery, parfois/souvent utile -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- Custom JS -->
+<script src="{% static 'common_frontend/js/public.js' %}"></script>
+<!-- Scrol to top button-->
+<script src="{% static 'common_frontend/js/scroll-to-top.js' %}"></script>
+<!-- Mode Dark/Light-->
+<script src="{% static 'common_frontend/js/color-mode.js' %}"></script>
+<!-- Messages autohide 3000 millisecondes -->
+<script type="text/javascript">
+    window.setTimeout(function() {
+        $(".alert").slideUp(3500, function(){
+            $(this).remove(); 
+        });
+    }, 3500);
+</script>
